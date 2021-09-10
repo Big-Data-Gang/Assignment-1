@@ -43,6 +43,7 @@ for line in sys.stdin:
     else:
         # If there was a prev state, the state and its total count
         if curr_state:
+            print(curr_city, city_count)
             print(curr_state, state_count)
         
         # Then update the state and city as well. Also reset the counts for both state and city
@@ -53,3 +54,6 @@ for line in sys.stdin:
 
         # When new state starts print it 
         print(state)       
+
+if curr_state:
+    print(curr_state, state_count)
