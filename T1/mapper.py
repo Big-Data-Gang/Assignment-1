@@ -18,5 +18,9 @@ for line in sys.stdin:
     status = checkConditions(myDict)
     if status:
         time = datetime.datetime.strptime(myDict["Start_Time"], "%Y-%m-%d %H:%M:%S")
-        print(time.hour, 1) 
+        #print(time.hour, type(time.hour))
+        if time.hour < 12:
+            print("0" + str(time.hour), 1)
+        else:
+            print(time.hour, 1) 
    
