@@ -13,18 +13,16 @@ for line in sys.stdin:
         hour, count = line.split(' ', 1)
     except:
         continue
-    # try:
-    #     count = int(count.strip())
-    #     hour = int(hour.strip())
-    # except ValueError:
-    count = int(count.strip())
-    hour = int(hour.strip())
+    try:
+        count = int(count.strip())
+        hour = int(hour.strip())
+    except ValueError:
+        continue
 
     if current_hour == hour:
         current_count += count
     else:
-        if current_hour:
-            # write result to STDOUT
+        if current_hour != None:
             print(f"{current_hour} {current_count}")
         current_count = count
         current_hour = hour
