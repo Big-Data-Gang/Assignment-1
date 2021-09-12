@@ -12,7 +12,7 @@ for line in sys.stdin:
     line = line.strip()
 
     # Each line will have location and count seperated by a tab. Ex: MA-Brewster       1 
-    loc, count = line.split('\t', 1)
+    loc, count = line.split('*', 1)
 
     # loc will be of the format state-city. Splitting it into state and city Ex: MA-Brewster 
     state, city = loc.split('-', 1)
